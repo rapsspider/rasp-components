@@ -1,24 +1,59 @@
 {
-  "name": "rasp-components",
-  "version": "1.0.0",
-  "description": "Components for making easy program with a raspberry",
-  "repository": {
-    "type" : "git",
-    "url" : "https://github.com/rapsspider/rasp-components.git"
+  "_from": "rasp-components",
+  "_id": "rasp-components@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-VdKS05FDdK4I89XjmO5uk/OK1X4MWEvxDdg+Eeh+Ep+KlZelFeARPH8/ScNourE/Qvy8Dini6G0XCc5FZJtYyQ==",
+  "_location": "/rasp-components",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "rasp-components",
+    "name": "rasp-components",
+    "escapedName": "rasp-components",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "os" : [ "darwin", "linux" ],
-  "main": "src/index.js",
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/rasp-components/-/rasp-components-1.0.0.tgz",
+  "_shasum": "8da5b3e61581cb2ec219b3f00eebc265292b194b",
+  "_spec": "rasp-components",
+  "_where": "/home/pi/garage",
+  "author": {
+    "name": "jason bourlard"
+  },
+  "bugs": {
+    "url": "https://github.com/rapsspider/rasp-components/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
-    "rpi-433-tristate": "2.3.1",
-    "onoff": "5.0.1"
+    "onoff": "5.0.1",
+    "rpi-433-tristate": "2.3.1"
   },
+  "deprecated": false,
+  "description": "Components for making easy program with a raspberry",
   "devDependencies": {},
-  "scripts": {},
+  "homepage": "https://github.com/rapsspider/rasp-components#readme",
   "keywords": [
     "raspberry",
     "components",
     "diy"
   ],
-  "author": "jason bourlard",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "src/index.js",
+  "name": "rasp-components",
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapsspider/rasp-components.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
 }
