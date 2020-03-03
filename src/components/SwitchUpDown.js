@@ -1,4 +1,4 @@
-const AbstractComponent = require("./AbstractComponent");
+const AbstractComponent = require("./AbstractComponent").default;
 
 const ACTIONS = {
   UP: "UP",

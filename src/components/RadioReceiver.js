@@ -1,4 +1,4 @@
-const AbstractComponent = require('./AbstractComponent');
+const AbstractComponent = require('./AbstractComponent').default;
 const rpi433 = require('rpi-433-tristate');
 
 class RadioReceiver extends AbstractComponent {

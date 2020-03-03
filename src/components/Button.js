@@ -1,4 +1,4 @@
-const AbstractComponent = require('./AbstractComponent');
+const AbstractComponent = require('./AbstractComponent').default;
 const Gpio = require('onoff').Gpio;
 
 const STATUT = {
@@ -24,7 +24,7 @@ module.exports = class Button extends AbstractComponent {
     this.init = this.init.bind(this);
     this.timeoutFct = this.timeoutFct.bind(this);
     this.intervalFct = this.intervalFct.bind(this);
-    this.destroy = this.destroy.bind(this);
+    this._destroy = this._destroy.bind(this);
 
     this.init();
   }

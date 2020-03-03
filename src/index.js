@@ -1,11 +1,11 @@
-const ComponentsService = require('./services/ComponentsService');
+const ComponentsService = require('./components/AbstractComponent').ComponentsService;
 
 process.on("SIGINT", () => {
-  ComponentsService.destroy();
+  ComponentsService.destroyAll();
 });
 
 module.exports = {
-  AbstractComponent: require('./components/AbstractComponent'),
+  AbstractComponent: require('./components/AbstractComponent').default,
   Button: require('./components/Button.js'),
   Switch: require('./components/Switch.js'),
   SwitchUpDown: require('./components/SwitchUpDown'),
