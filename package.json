@@ -1,0 +1,24 @@
+{
+  "name": "rasp-components",
+  "version": "1.0.0",
+  "description": "Components for making easy program with a raspberry",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/rapsspider/rasp-components.git"
+  },
+  "os" : [ "darwin", "linux" ],
+  "main": "src/index.js",
+  "dependencies": {
+    "rpi-433-tristate": "2.3.1",
+    "onoff": "5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "keywords": [
+    "raspberry",
+    "components",
+    "diy"
+  ],
+  "author": "jason bourlard",
+  "license": "ISC"
+}
