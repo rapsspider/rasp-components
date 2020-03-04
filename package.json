@@ -1,6 +1,6 @@
 {
   "_from": "rasp-components",
-  "_id": "rasp-components@1.0.1",
+  "_id": "rasp-components@1.0.2",
   "_inBundle": false,
   "_integrity": "sha512-VdKS05FDdK4I89XjmO5uk/OK1X4MWEvxDdg+Eeh+Ep+KlZelFeARPH8/ScNourE/Qvy8Dini6G0XCc5FZJtYyQ==",
   "_location": "/rasp-components",
@@ -36,7 +36,11 @@
   },
   "deprecated": false,
   "description": "Components for making easy program with a raspberry",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
   "homepage": "https://github.com/rapsspider/rasp-components#readme",
   "keywords": [
     "raspberry",
@@ -44,7 +48,7 @@
     "diy"
   ],
   "license": "ISC",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "name": "rasp-components",
   "os": [
     "darwin",
@@ -54,6 +58,11 @@
     "type": "git",
     "url": "git+https://github.com/rapsspider/rasp-components.git"
   },
-  "scripts": {},
-  "version": "1.0.0"
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node ./src/index.ts",
+    "test": "ts-node ./src/test.ts",
+    "publish": "tsc && npm publish"
+  },
+  "version": "1.0.2"
 }

@@ -1,27 +1,37 @@
 const AbstractComponent = require('./AbstractComponent').default;
 const rpi433 = require('rpi-433-tristate');
 
-class RadioReceiver extends AbstractComponent {
-  constructor(pinCode, { debounceDelay } = {}) {
+interface RadioReceiverConfig {
+  debounceDelay?: number
+}
+
+export default class RadioReceiver extends AbstractComponent {
+
+  private sniffer: any;
+
+  constructor(pinCode: number, config?: RadioReceiverConfig) {
     super(pinCode);
-    this.pin = pinCode;
+
     this.sniffer = rpi433.sniffer({
       pin: pinCode,
-      debounceDelay: debounceDelay || 500
+      debounceDelay: config && config.debounceDelay || 500
     });
 
     this.init = this.init.bind(this);
+    this._destroy = this._destroy.bind(this);
 
     this.init();
   }
 
-  init() {
+  private init() {
     // Receive (data is like {code: xxx, pulseLength: xxx})
-    rfSniffer.on('data', (data) => {
+    this.sniffer.on('data', (data: any) => {
       console.log('Code received: '+data.code+' pulse length : '+data.pulseLength);
       this.emit('data', data);
     });
   }
-}
 
-module.exports = RadioReceiver;
+  private _destroy() {
+
+  }
+}

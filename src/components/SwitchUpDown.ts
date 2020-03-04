@@ -1,19 +1,37 @@
-const AbstractComponent = require("./AbstractComponent").default;
+import AbstractComponent from './AbstractComponent';
+import Button from './Button';
+import Switch from './Switch';
 
-const ACTIONS = {
-  UP: "UP",
-  STOP: "STOP",
-  DOWN: "DOWN"
+enum ACTIONS {
+  UP,
+  STOP,
+  DOWN
 }
 
-class SwitchUpDown extends AbstractComponent {
-  constructor({buttonUp, buttonDown, buttonStop, relayUp, relayDown}) {
+interface ParamConstructor {
+  buttonUp: Button, 
+  buttonDown: Button, 
+  buttonStop?: Button, 
+  relayUp: Switch, 
+  relayDown: Switch
+}
+
+export default class SwitchUpDown extends AbstractComponent {
+
+  private buttonUp: Button;
+  private buttonDown: Button;
+  private buttonStop?: Button;
+  private relayUp: Switch;
+  private relayDown: Switch;
+  private action: ACTIONS;
+
+  constructor(params: ParamConstructor) {
     super();
-    this.buttonUp = buttonUp;
-    this.buttonDown = buttonDown;
-    this.relayUp = relayUp;
-    this.relayDown = relayDown;
-    this.buttonStop = buttonStop;
+    this.buttonUp = params.buttonUp;
+    this.buttonDown = params.buttonDown;
+    this.relayUp = params.relayUp;
+    this.relayDown = params.relayDown;
+    this.buttonStop = params.buttonStop;
 
     this.action = ACTIONS.STOP;
 
@@ -26,7 +44,7 @@ class SwitchUpDown extends AbstractComponent {
     this.init();
   }
 
-  init() {
+  private init() {
     this.buttonUp.on('click', () => {
       this.up();
     });
@@ -68,6 +86,4 @@ class SwitchUpDown extends AbstractComponent {
 
   }
 }
-
-module.exports = SwitchUpDown;
 
