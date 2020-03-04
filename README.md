@@ -1,5 +1,8 @@
 Some components for raspberry pi when programming in nodejs
 
+# Install package
+`npm i --save rasp-components`
+
 # Example
 ```javascript
 import { Button, Switch, SwitchUpDown } from "rasp-components";
